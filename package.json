@@ -1,0 +1,27 @@
+{
+  "name": "seas-cypress-cucumber-utilities-4js",
+  "version": "1.0.0",
+  "description": "Cypress/Cucumber Utilities for JavaScript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northhighland-seas/seas-cypress-cucumber-utilities-4js.git"
+  },
+  "keywords": [],
+  "author": "Craig Gregory",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/northhighland-seas/seas-cypress-cucumber-utilities-4js/issues"
+  },
+  "homepage": "https://github.com/northhighland-seas/seas-cypress-cucumber-utilities-4js#readme",
+  "devDependencies": {
+    "cypress": "^9.6.1",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "scripts": {
+    "cypress": "cypress open",
+    "test-record": "cypress run --record --key 39eb337c-3599-40ff-86cc-a539aba3974f --spec cypress/integration/[abcdefghijklmnopqrstuvwxyz0123456789]*/**",
+    "test-setup": "cypress run --spec cypress/integration/_project-setup/**",
+    "test": "cypress run --spec cypress/integration/[abcdefghijklmnopqrstuvwxyz0123456789]*/**"
+  }
+}
