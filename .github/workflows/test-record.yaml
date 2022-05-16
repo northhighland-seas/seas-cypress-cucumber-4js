@@ -7,9 +7,15 @@ on: [workflow_dispatch]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    
     steps:
+
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY}}
+          repo-mappings: github.com/northhighland-seas/seas-cypress-cucumber-utilities-js
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
