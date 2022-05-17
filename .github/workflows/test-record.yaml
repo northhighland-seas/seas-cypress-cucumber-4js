@@ -20,9 +20,9 @@ jobs:
         uses: jsdaniell/create-json@1.1.2
         with:
           name: "cypress.env.json"
-          json: ${{ secrets.TEST_CONFIGURTION }}
+          json: '{ "TEST_CONFIGURATION": { "query": "swiss cheese" } }'
 
-      - name: Cypress run
+      - name: Cypress
         uses: cypress-io/github-action@v2
         with:
           record: true
