@@ -16,7 +16,7 @@ Then('the user sees the {string} page', title => {
     const matched = /\${(.*)}/g.exec(title);
 
     if (matched)
-        title = Cypress.env('TEST_CONFIGURATION')//[matched[1]];
+        title = Cypress.env('TEST_CONFIGURATION')[matched[1]];
 
     cy.title().should('include', title);
 });
