@@ -32,7 +32,8 @@ function enterFieldData(field, value, delay) {
     const matched = /\${(.*)}/g.exec(value);
 
     if (matched) 
-         value = Cypress.env('TEST_CONFIGURATION')//[matched[1]];
+        //  value = Cypress.env('TEST_CONFIGURATION')//[matched[1]];
+        value = 'swiss cheese';
  
     cy.get(field).type(value, { delay: delay });
 }
