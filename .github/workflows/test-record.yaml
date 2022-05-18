@@ -17,7 +17,8 @@ jobs:
           repo-mappings: github.com/northhighland-seas/seas-cypress-cucumber-utilities-js
 
       -name: Decrypt cypress.env.json File
-        run: gpg --decrypt --passphrase abc123 --batch -o cypress.env.json cypress.env.json.gpg
+        run: |
+          gpg --decrypt --passphrase abc123 --batch -o cypress.env.json cypress.env.json.gpg
 
       - name: Cypress
         uses: cypress-io/github-action@v2
@@ -27,4 +28,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           CYPRESS_TEST_CONFIGURATION: ${{ secrets.TEST_CONFIGURATION }}
- 
