@@ -104,6 +104,7 @@ dist
 .tern-port
 
 # Cypress
+.gpg.passpharse
 cypress.*.json
 cypress/screenshots
 cypress/videos
