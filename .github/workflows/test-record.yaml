@@ -26,4 +26,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          CYPRESS_TEST_CONFIGURATION: ${{ secrets.TEST_CONFIGURATION }}
+          # CYPRESS_TEST_CONFIGURATION: ${{ secrets.TEST_CONFIGURATION }}
