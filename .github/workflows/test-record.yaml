@@ -16,12 +16,8 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY}}
           repo-mappings: github.com/northhighland-seas/seas-cypress-cucumber-utilities-js
 
-      # - name: Create cypress.env.json
-      #   uses: jsdaniell/create-json@1.1.2
-      #   with:
-      #     name: "cypress.env.json"
-      #     json: ${{ secrets.TEST_CONFIGURTION }}
-      #     json: '{ "TEST_CONFIGURATION": { "query": "swiss cheese" } }'
+      -name: Decrypt cypress.env.json File
+        run: gpg --decrypt --passphrase abc123 --batch -o cypress.env.json cypress.env.json.gpg
 
       - name: Cypress
         uses: cypress-io/github-action@v2
