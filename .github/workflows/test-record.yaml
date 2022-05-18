@@ -13,16 +13,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ssh-private-key: ${{ secrets.SSH_KEY}}
+          ssh-private-key: ${{ secrets.SSH_KEY }}
           repo-mappings: github.com/northhighland-seas/seas-cypress-cucumber-utilities-js
 
       - name: Decrypt cypress.env.json File
-        run: gpg --decrypt --passphrase abc123 --batch -o cypress.env.json cypress.env.json.gpg
+        run: gpg --decrypt --passphrase ${{ secrets.PGP_PASSPHRASE }} --batch -o cypress.env.json cypress.env.json.gpg
 
       - name: Cypress Tests
         uses: cypress-io/github-action@v2
         with:
           record: true
+          browser: chrome
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
