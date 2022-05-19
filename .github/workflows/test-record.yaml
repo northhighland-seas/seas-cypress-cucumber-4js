@@ -19,9 +19,11 @@ jobs:
       - name: xxx
         run: ls -la
 
-      - name: Hack cypress-cucumber-preprocessor
+      - name: Hack cypress-cucumber-preprocessor pt 1/2
         run: mkdir -p node_modules/cypress-cucumber-preprocessor/lib
-        run: cp .misc/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
+
+      - name: Hack cypress-cucumber-preprocessor pt 2/2
+         run: cp .misc/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
 
       - name: Decrypt cypress.env.json File
         run: gpg --decrypt --passphrase ${{ secrets.GPG_PASSPHARSE }} --batch -o cypress.env.json cypress.env.json.gpg
