@@ -16,6 +16,9 @@ jobs:
         #   ssh-private-key: ${{ secrets.SSH_KEY }}
         #   repo-mappings: get@github.com/northhighland-seas/seas-cypress-cucumber-preprocessor
 
+      - name: xxx
+        run: ls -la
+
       - name: Hack cypress-cucumber-preprocessor
         run: cp .misc/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
 
