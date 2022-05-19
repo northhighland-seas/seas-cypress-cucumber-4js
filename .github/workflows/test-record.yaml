@@ -16,6 +16,9 @@ jobs:
         #   ssh-private-key: ${{ secrets.SSH_KEY }}
         #   repo-mappings: get@github.com/northhighland-seas/seas-cypress-cucumber-preprocessor
 
+      - name: Hack cypress-cucumber-preprocessor
+        run: cp .misc/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/
+
       - name: Decrypt cypress.env.json File
         run: gpg --decrypt --passphrase ${{ secrets.GPG_PASSPHARSE }} --batch -o cypress.env.json cypress.env.json.gpg
 
