@@ -20,6 +20,7 @@ jobs:
         run: ls -la
 
       - name: Hack cypress-cucumber-preprocessor
+        run: mkdir -p node_modules/cypress-cucumber-preprocessor/lib
         run: cp .misc/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
 
       - name: Decrypt cypress.env.json File
