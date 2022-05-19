@@ -12,9 +12,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY }}
-          repo-mappings: get@github.com/northhighland-seas/seas-cypress-cucumber-preprocessor
+        # with:
+        #   ssh-private-key: ${{ secrets.SSH_KEY }}
+        #   repo-mappings: get@github.com/northhighland-seas/seas-cypress-cucumber-preprocessor
 
       - name: Decrypt cypress.env.json File
         run: gpg --decrypt --passphrase ${{ secrets.GPG_PASSPHARSE }} --batch -o cypress.env.json cypress.env.json.gpg
