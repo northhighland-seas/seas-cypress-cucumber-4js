@@ -35,10 +35,10 @@ const getStepDefinitionsPaths = (filePath) => {
         paths = paths.concat(glob.sync(pattern));
     }
 
-    if (config && config.nonGlobalStepDefinitions && (config.xcom_projectStepDefinitions || config.xcom_utils4jsStepDefinitions))
+    if (config && config.nonGlobalStepDefinitions && (config.seas_projectStepDefinitions || config.seas_utils4jsStepDefinitions))
         paths = [].concat(
-            glob.sync(`${appRoot}/${config.xcom_projectStepDefinitions}/**/*.+(js|ts|tsx)`),
-            glob.sync(`${appRoot}/${config.xcom_utils4jsStepDefinitions}/**/*.+(js|ts|tsx)`),
+            glob.sync(`${appRoot}/${config.seas_projectStepDefinitions}/**/*.+(js|ts|tsx)`),
+            glob.sync(`${appRoot}/${config.seas_utils4jsStepDefinitions}/**/*.+(js|ts|tsx)`),
         );
 
     return paths;
