@@ -16,8 +16,13 @@ jobs:
         #   ssh-private-key: ${{ secrets.SSH_KEY }}
         #   repo-mappings: get@github.com/northhighland-seas/seas-cypress-cucumber-preprocessor
 
-      - name: Hack cypress-cucumber-preprocessor pt 1/2
-        run: mkdir -p node_modules/cypress-cucumber-preprocessor/lib
+      # - name: Hack cypress-cucumber-preprocessor pt 1/2
+      #   run: mkdir -p node_modules/cypress-cucumber-preprocessor/lib
+
+      - name: Cypress Install
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
 
       - name: Hack cypress-cucumber-preprocessor pt 2/2
         run: cp .misc/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
@@ -28,6 +33,7 @@ jobs:
       - name: Cypress Tests
         uses: cypress-io/github-action@v2
         with:
+          install: false
           record: true
           browser: chrome
         env:
