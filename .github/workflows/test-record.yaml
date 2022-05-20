@@ -12,9 +12,6 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-        # with:
-        #   ssh-private-key: ${{ secrets.SSH_KEY }}
-        #   repo-mappings: get@github.com/northhighland-seas/seas-cypress-cucumber-preprocessor
 
       - name: Cypress Install
         uses: cypress-io/github-action@v2
@@ -25,7 +22,7 @@ jobs:
         run: cp .misc/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
 
       - name: Decrypt cypress.env.json File
-        run: gpg --decrypt --passphrase ${{ secrets.GPG_PASSPHARSE }} --batch -o cypress.env.json .misc/cypress.env.json.gpg
+        run: gpg --decrypt --passphrase ${{ secrets.GPG_PASSphrase }} --batch -o cypress.env.json .misc/cypress.env.json.gpg
 
       - name: Cypress Tests
         uses: cypress-io/github-action@v2

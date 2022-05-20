@@ -1,5 +1,5 @@
 
-.gpg.passpharse
+*.secret
 cypress.*.json
 cypress/screenshots
 cypress/videos
