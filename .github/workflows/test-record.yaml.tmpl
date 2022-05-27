@@ -19,10 +19,10 @@ jobs:
           runTests: false
 
       - name: Hack cypress-cucumber-preprocessor
-        run: cp seas-cypress-cucumber-utilities-4js/setup/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
+        run: cp node_modules/seas-cypress-cucumber-utilities-4js/.setup/getStepDefinitionsPaths.js node_modules/cypress-cucumber-preprocessor/lib/getStepDefinitionsPaths.js
 
       - name: Decrypt cypress.env.json File
-        run: gpg --decrypt --passphrase ${{ secrets.GPG_PASSphrase }} --batch -o cypress.env.json .encryption/cypress.env.json.gpg
+        run: gpg --decrypt --passphrase ${{ secrets.GPG_PASSPHRASE }} --batch -o cypress.env.json .protected/cypress.env.json.gpg
 
       - name: Cypress Tests
         uses: cypress-io/github-action@v2

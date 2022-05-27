@@ -1,0 +1,5 @@
+{
+    "nonGlobalStepDefinitions": true,
+    "seas_projectStepDefinitions": "cypress/support/step_definitions",
+    "seas_utils4jsStepDefinitions": "node_modules/seas-cypress-cucumber-utilities-4js/cypress/support/step_definitions"
+}
