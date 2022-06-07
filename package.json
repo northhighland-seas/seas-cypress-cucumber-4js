@@ -1,6 +1,6 @@
 {
     "name": "seas-cypress-cucumber-4js",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Cypress/Cucumber Utilities for JavaScript",
     "main": "index.js",
     "repository": {
@@ -15,13 +15,13 @@
     },
     "homepage": "https://github.com/northhighland-seas/seas-cypress-cucumber-4js#readme",
     "devDependencies": {
-        "cypress": "^9.7.0",
+        "cypress": "^10.0.3",
         "cypress-cucumber-preprocessor": "^4.3.1"
     },
     "scripts": {
         "cypress": "cypress open",
-        "test-record": "cypress run --record --key 39eb337c-3599-40ff-86cc-a539aba3974f --spec cypress/integration/{*,!(_)*/**}",
-        "test-setup": "cypress run --spec cypress/integration/_project-setup/**",
-        "test": "cypress run --spec cypress/integration/{*,!(_)*/**}"
+        "test-record": "cypress run --record --key 39eb337c-3599-40ff-86cc-a539aba3974f --spec cypress/e2e/{*,!(_)*/**}",
+        "test-setup": "cypress run --spec cypress/e2e/_project-setup/**",
+        "test": "cypress run --spec cypress/e2e/{*,!(_)*/**}"
     }
 }

@@ -9,7 +9,7 @@
 
 const cucumber = require('cypress-cucumber-preprocessor').default;
 
-const cc4js = require('./cc4js-plugins.js')
+const cc4js = require('./cc4js-plugins.js');
 
 
 module.exports = (on, config) => {

@@ -1,7 +1,0 @@
-{
-    "projectId": "gevjw9",
-    "testFiles": [
-        "**/*.{feature,features}",
-        "**/*.spec.{js,ts}"
-    ]
-}
